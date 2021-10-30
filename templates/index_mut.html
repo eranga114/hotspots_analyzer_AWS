@@ -1,0 +1,78 @@
+   <html>
+    <head>
+        <title> Practice</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js">
+        </script>
+
+    </head>
+    <body>
+    <div class="ui container">
+        <div class="ui sizer vertical segment">
+            <h1 class="ui block header"><center>Welcome to Cancer Driver Mutation Analyzer</center></h1>
+            <h3 class="ui header"><center>Andersen Lab </center></h3>
+        </div>
+    <p></p>
+        <div class="ui three item menu">
+            <a href="/" class="item">Home</a>
+            <a class="item">About</a>
+            <a class="item">Download</a>
+        </div>
+            <br>
+        <br>
+        <div class="ui segment">
+            <div class="ui two column very relaxed grid">
+                <div class="column">
+                    <table class="ui celled table">
+                        <thead>
+                        <h2>Gene Specific Occurrence</h2>
+                        <tr><th >Gene Name</th>
+                            <th>Mutation Occurrence</th>
+                        </tr></thead>
+                        <tbody>
+                        {% for row in lis_genes_group %}
+                        <tr>
+                            {% for cell in row %}
+                            <td>{{cell}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="column">
+                    <table class="ui celled table">
+                        <thead>
+                        <h2>Mutation specific Occurrence</h2>
+                        <tr><th>Gene Name</th>
+                        <th>Mutation Type</th>
+                        <th>Site</th>
+                        <th>Mutation Occurrence</th>
+                        <th>Hotspots Predicted</th>
+                        <th>Probability</th>
+                        </tr></thead>
+                        <tbody>
+                        {% for row in list_genes_mut_group %}
+                        <tr>
+                            {% for cell in row %}
+                            <td>{{cell}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+               </div>
+
+            </div>
+        </div>
+
+        <br>
+
+
+
+
+        </div>
+
+    </div>
+    </body>
+  </html>

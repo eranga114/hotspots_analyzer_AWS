@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title> Practice</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js">
+        </script>
+
+    </head>
+    <body>
+    <div class="ui container">
+        <div class="ui sizer vertical segment">
+            <h1 class="ui block header"><center>Welcome to Cancer Driver Mutation Analyzer</center></h1>
+            <h3 class="ui header"><center>Andersen Lab </center></h3>
+        </div>
+    <p></p>
+        <div class="ui three item menu">
+            <a href="/" class="item">Home</a>
+            <a class="item">About</a>
+            <a class="item">Download</a>
+        </div>
+
+            <br><br>
+        <table class="ui selectable table">
+
+  <thead>
+    <tr>
+        <th>Patient ID</th>
+        <th>Total Number of Mutations</th>
+        <th>Show Patient Data</th>
+    </tr>
+  </thead>
+            <tbody>
+            {% for cell in lis_patientid_group %}
+            <tr>
+                <td>{{cell[0]}}</a></td>
+                <td>{{cell[1]}}</a></td>
+                <td><a href="/getpatall/{{cell[0]}}"><button class="ui primary button">Patient Data</button></a> </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </body>
+  </html>
