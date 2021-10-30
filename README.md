@@ -1,0 +1,1 @@
+# hotspots_analyzer_AWS
